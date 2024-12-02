@@ -2,26 +2,26 @@ import React from "react";
 import { Pressable, Text } from "react-native";
 import PropTypes from "prop-types";
 
-const Button = (props) => {
+const Buttons = (props) => {
     return (
         <Pressable 
             disabled={props.isDisabled} 
-            className="bg-[#ff8629] font-black self-center rounded-xl  h-12 w-[140px] justify-center items-center" onPress={()=>props.onPress()}
+            className="bg-[#ff8629] font-black self-center rounded-xl  h-12 w-full justify-center items-center" onPress={()=>props.onPress()}
         >
             <Text className="text-white text-lg">{props.title}</Text>
         </Pressable>
     );
 };
 
-Button.defaultProps = {
+Buttons.defaultProps = {
     isDisabled: false, 
     onPress:()=>{}
 };
 
-Button.propTypes = {
+Buttons.propTypes = {
     title: PropTypes.string.isRequired,
     isDisabled: PropTypes.bool,
     onPress: PropTypes.func
 };
 
-export default Button;
+export default Buttons;

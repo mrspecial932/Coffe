@@ -10,7 +10,7 @@ const GoBack = (props)=>{
   
     return (
         <Pressable onPress={()=> props.onPress()}>
-            <FontAwesomeIcon icon={faArrowLeft}/>
+            <FontAwesomeIcon icon={faArrowLeft} color="#fff"/>
             
         </Pressable>
     )

@@ -1,9 +1,9 @@
 import React ,{useRef, useState} from "react"; 
-import { Pressable, Text } from "react-native";
+import { Image, Pressable, Text, TouchableOpacity, View} from "react-native";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
-import { faStar ,  faObjectGroup} from "@fortawesome/free-solid-svg-icons";
+import { faStar ,faCoffee, faObjectGroup} from "@fortawesome/free-solid-svg-icons";
 
 const Size = (props) => {
     const [width, setWidth] = useState(0);
@@ -14,20 +14,20 @@ const Size = (props) => {
     }
     return (
 
-        <Pressable 
-         
-        
-            
+        <TouchableOpacity 
             onPress={() => props.onPress(props.tabId)} style={[TabWidth]}
         >
-            <Text className={`  font-black self-center rounded-[200px]    justify-center items-center ${props.isInactive ? 'bg-[#ff8629]' : 'bg-[#0d7667]'}`} 
-            >
-            <FontAwesomeIcon icon={faObjectGroup} size={50} color="#ffcc5b" className="" />
-            </Text>
+            <View className={`font-black self-center rounded-full h-16 w-16 justify-center items-center  ${props.isInactive ? 'bg-[#ff8629]' : 'bg-[#0d7667]'}`}>
+      <Image
+        source={require('./../Screens/sas.png')}  // Replace with your actual image path
+        className="h-8 w-8 rounded-full"  // Adjust image size to fit within the circle
+        resizeMode="cover"  // Ensures the image scales to cover the entire area
+      /></View>
+      
             <Text onTextLayout={event=>{
                 setWidth(event.nativeEvent.lines[0].width)
-            }} ref={textRef} className={`   ${props.isInactive ? 'text-black' : 'text-white'}`} >{props.title}</Text>
-        </Pressable>
+            }} ref={textRef} className={` text-center  mt-2 text-base  ${props.isInactive ? 'text-black' : 'text-white'}`} >{props.title}</Text>
+        </TouchableOpacity>
     );
 };
 

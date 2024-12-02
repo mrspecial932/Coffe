@@ -5,18 +5,19 @@ import User from "./reducer.js/user";
 import {logger} from "redux-logger";
 import  Categories  from "./reducer.js/categories";
 import  Cards  from "./reducer.js/card";
-import Sizes from "./reducer.js/size";
+import Wishlist from "./reducer.js/Wishlist";
 
 const rootReducer= combineReducers({
     user:User,
     categories :Categories,
-    Size :Sizes,
-    cards : Cards 
+    cards : Cards ,
+    Wishlist: Wishlist
+   
 })  
 const configuration ={
-    key : "21g",
+    key : "drdaka",
     storage : AsyncStorage,
-    version: 21,
+    version: 916
 }
 const persistedReducer= persistReducer(configuration, rootReducer)
 const store= configureStore({
